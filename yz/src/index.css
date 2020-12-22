@@ -1,0 +1,199 @@
+/* === GAME === */
+.game {
+  font-family: Arial, Charcoal, sans-serif;
+
+  display: grid;
+  align-content: start;
+  grid-gap: 0vh 1vh;
+  grid-template:
+    "scorecard header" auto 
+    "scorecard dice" auto / auto auto;
+  width: max-content;
+  height: max-content;
+}
+.game.game-seven{
+  border-right: 2px dotted purple;
+  border-left: 2px dotted purple;
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
+}
+.game-seven .scorecard table{
+  background-color: #e6ccff !important;
+}
+
+.header {
+  grid-area: header;
+}
+
+/* === SCORECARD === */
+.scorecard {
+  grid-area: scorecard;
+	display: flex;
+	flex-flow: wrap column;
+	justify-content: center;
+}
+
+.scorecard table{
+	background-color: lightgrey;
+	width: 100%;
+	margin: 1px;
+}
+
+.scorecard table, thead {
+	border: 1px solid black;
+}
+
+.scorecard td:nth-child(2){
+	border-light: 1px solid black;
+	display: flex;
+	justify-content: center;
+}
+
+.table-row-button {
+	font-weight: bold;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+	width: 100%;
+}
+
+.table-row-button.disabled {
+	font-weight: normal;
+}
+
+/* === DICE === */
+.dice-display {
+  grid-area: dice;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.dice {
+  border: 1px solid orange;
+  margin: 1vh;
+  font-size: 150%;
+  text-align: center;
+	width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice.selected {
+  border: 3px solid purple;
+
+}
+
+.dice.button {
+  border: 2px solid black; 
+}
+
+.simpledice {
+  font-size: 3rem;
+  display: flow;
+  height: max-content;
+  width: max-content;
+  padding: 0;
+}
+
+
+/* === ROLL COUNTER === */
+.roll-counter {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.dot {
+  height:0.6em;
+  width:0.6em;
+  background-color:#bbb;
+  border-radius:50%;
+  display:inline-block;
+  margin: 0.01em;
+}
+            
+.dot.filled{
+  background-color:red;
+}
+
+/* === SCORE BOARD === */
+.score.button {
+  padding: 2px;
+}
+
+.scoreboard.icon {
+  padding: 2px;
+  height: 1em;
+}
+
+.scoreboard {
+  position: relative;
+}
+.scoreboard.board {
+  background-color: #dae6f1;
+  position: absolute;
+  top: 1.25rem;
+  right: 0.25rem;
+   
+  border: 1px solid black;
+  border-spacing: 0;
+  text-align: center;
+
+  table-layout: fixed;
+}
+.scoreboard.board thead {
+  background-color: #cc99ff;
+}
+.scoreboard.board th, .scoreboard.board td {
+  border: 1px solid purple;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: inherit;
+}
+.scoreboard.board th:nth-child(2){
+  width: max-content;
+}
+.scoreboard.board.hidden {
+  display: none;
+}
+
+/* === SAVE SCORE === */
+.save-score {
+  display: flex;
+  flex-flow: column wrap;
+  width: min-content;
+  margin: 3px;
+  margin-top: 10px;
+}
+.save-score input{
+  padding: 2px;
+  border: 1px solid black;
+}
+.save-score .score.button {
+  border: 1px solid black;
+}
+
+.msg {
+  color: black;
+  padding: 2px;
+  border: 1px solid black;
+}
+.msg.error {
+  color: red;
+}
+.msg.success {
+  color: green;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+  .scoreboard.board th:nth-child(1){
+    width: 35vw;
+  }
+  .scoreboard.board th:nth-child(2){
+    width: 20vw;
+  }
+}
+
+

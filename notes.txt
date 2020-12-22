@@ -1,0 +1,12 @@
+
+docker build --build-arg JS_NAME=yz --tag dockertest:1.0 .
+
+docker run --name datest dockertest:1.0
+
+docker run -d --name datest  \
+--mount source=testvol,target=/app \
+dockertest:1.0 
+
+docker run -d --name datest  --mount source=testvol,target=/app dockertest:1.0 
+
+docker rm `docker ps -aq`
